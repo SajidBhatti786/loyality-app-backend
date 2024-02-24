@@ -2,7 +2,7 @@ const axios = require("axios");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
-const jWT_SECRET = process.env.JWT_SECRET;
+const jWT_SECRET = process.env.jWT_SECRET;
 
 // Login API
 const login = async (req, res) => {
