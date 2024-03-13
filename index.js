@@ -25,14 +25,15 @@ const startServer = async () => {
     app.use(express.static(path.join(__dirname, "public")));
 
     const authRoutes = require("./routes/authRoutes");
-    // const eventRoutes = require("./routes/eventRoute");
+    const transactionRoutes = require("./routes/transactionRoutes");
+    const loyalityRoutes = require("./routes/loyalityRoutes");
     // const ticketRoutes = require("./routes/ticketRoute");
     // const userRoutes = require("./routes/userRoute");
 
     // Use routes
     app.use("/api/auth", authRoutes);
-    // app.use("/api/event", eventRoutes);
-    // app.use("/api/ticket", ticketRoutes);
+    app.use("/api/transaction", transactionRoutes);
+    app.use("/api/loyality", loyalityRoutes);
     // app.use("/api/user", userRoutes);
     // Set CORS for specific routes
     app.use(cors({ origin: "*" }));
